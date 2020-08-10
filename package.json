@@ -1,0 +1,36 @@
+{
+  "name": "start-practic",
+  "version": "1.0.0",
+  "description": "my-test-project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/El-dinero/My_test-blog.git"
+  },
+  "author": "el-dinero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/El-dinero/My_test-blog/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "homepage": "https://github.com/El-dinero/My_test-blog#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "mongoose": "^5.9.28"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-node": "^11.1.0",
+    "nodemon": "^2.0.4"
+  }
+}
