@@ -11,6 +11,7 @@ module.exports = () => {
           .create({
             title: faker.lorem.words(20),
             body: faker.lorem.words(100),
+            author: faker.lorem.words(10),
           })
           .then(console.log)
           .catch(console.error);

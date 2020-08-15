@@ -8,6 +8,11 @@ const schema = new Schema(
     },
     body: {
       type: String,
+      required: true,
+    },
+    author: {
+      type: String,
+      required: true,
     },
   },
   {
