@@ -7,7 +7,30 @@ POST http://localhost:3000/
 Content-Type: application/json
 
 {
-    "title":"asdasd",
-    "body":"",
-    "author":""
+    "title":"Lorem ipsum",
+    "body":"Cillum quis deserunt non ullamco et cupidatat culpa cillum esse laboris.",
+    "author":"zLorem"
+}
+
+####
+
+DELETE http://localhost:3000/5f38b97522b82a0b7044a2b8
+Content-Type: application/json
+
+####
+PUT http://localhost:3000/5f38ff6a254cff2144b61e61
+Content-Type: application/json
+
+{
+    "_title":"add",
+    "_author":"jsiфіasdfваdsdfuasdffmeiuwjn",
+    "_body":"Irure mollit esse tempor cillum quis. Lorem veniam anim et dolore non ut deserunt aliquip cillum cupidatat irure deserunt. Laborum dolor eu ullamco incididunt veniam. Excepteur tempor fugiat commodo incididunt exercitation velit ipsum ex sit eiusmod. Velit deserunt ea ex excepteur excepteur et reprehenderit irure occaecat labore in cupidatat. Dolore non consequat Lorem velit est fugiat esse excepteur aute. Est sunt esse reprehenderit anim mollit veniam amet sunt proident."
+}
+
+####
+PATCH  http://localhost:3000/5f38ff6a254cff2144b61e61
+Content-Type: application/json
+
+{
+    "_title":"adda",
 }

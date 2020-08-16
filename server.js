@@ -31,7 +31,11 @@ app.use((error, req, res, next) => {
 
 // Set up default mongoose connection
 const mongoDB = config.MONGO_URL;
-connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
+connect(mongoDB, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+})
   .then(() => {
     console.log("Mongo conected...");
 
