@@ -10,6 +10,14 @@ const schema = new Schema(
       type: String,
       required: true,
     },
+    // comments: [
+    //   {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "Comment",
+    //     autopopulate: true,
+    //   },
+    // ],
+    date: { type: Date, default: Date.now },
   },
   {
     timestamps: true,

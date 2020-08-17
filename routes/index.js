@@ -1,2 +1,2 @@
-const posts = require("./blog/posts");
+const posts = require("./posts");
 module.exports = { posts };

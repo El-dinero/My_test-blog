@@ -6,6 +6,14 @@ const schema = new Schema(
       type: String,
       required: true,
     },
+    post: {
+      type: Schema.Types.ObjectId,
+      ref: "Post",
+    },
+    date: {
+      type: Date,
+      default: Date.now,
+    },
   },
   {
     timestamps: true,
@@ -16,4 +24,4 @@ schema.set("toJSON", {
   virtuals: true,
 });
 
-module.exports = model("Post", schema);
+module.exports = model("Comment", schema);
