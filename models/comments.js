@@ -10,6 +10,11 @@ const schema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "Post",
     },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+      autopopulate: true,
+    },
     date: {
       type: Date,
       default: Date.now,

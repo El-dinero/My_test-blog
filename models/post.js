@@ -10,13 +10,10 @@ const schema = new Schema(
       type: String,
       required: true,
     },
-    // comments: [
-    //   {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "Comment",
-    //     autopopulate: true,
-    //   },
-    // ],
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
     date: { type: Date, default: Date.now },
   },
   {

@@ -1,5 +1,5 @@
-const modelsPost = require("./blog/post");
-const modelsComments = require("./blog/comments");
+const modelsPost = require("./post");
+const modelsComments = require("./comments");
 
 module.exports = {
   modelsPost,
