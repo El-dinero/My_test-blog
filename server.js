@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 //підключення конфіг залежностей
 const config = require("./config");
 //підключення роутінгу
-const { posts } = require("./routes/index");
+const { posts, userRegister } = require("./routes/index");
 
 const app = express();
 
@@ -15,12 +15,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routes
 app.use("/", posts);
+app.use("/user", userRegister);
 
-// error 404
-app.use((req, res, next) => {
-  const err = new Error("Not Found");
-  err.status = 404;
-  next(err);
+app.use(function (req, res) {
+  res.status(404).send("404 - Not Found!");
 });
 
 // error handler
@@ -42,7 +40,7 @@ connect(mongoDB, {
     // require("./mocks")();
     //Listen Server express
     app.listen(config.PORT, () => {
-      console.log(`Server started on port ${config.PORT}`);
+      console.log(`Server on http://localhost:${config.PORT}/`);
     });
   })
   .catch((e) => console.error(e));

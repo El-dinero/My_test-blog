@@ -3,7 +3,8 @@
   "env": {
     "NODE_ENV": "development",
     "PORT": 3000,
-    "MONGO_URL": "mongodb://127.0.0.1/my_blog"
+    "MONGO_URL": "mongodb://127.0.0.1/my_blog",
+    "JWT_SECRET_USER": "My_seckret_token"
   },
   "ext": ".js,.json",
   "watch": "./"
