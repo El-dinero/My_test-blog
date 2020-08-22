@@ -6,11 +6,11 @@ const schema = new Schema(
       type: String,
       required: true,
     },
-    post: {
+    postID: {
       type: Schema.Types.ObjectId,
       ref: "Post",
     },
-    owner: {
+    userID: {
       type: Schema.Types.ObjectId,
       ref: "User",
       autopopulate: true,

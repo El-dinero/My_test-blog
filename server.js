@@ -5,7 +5,13 @@ const bodyParser = require("body-parser");
 //підключення конфіг залежностей
 const config = require("./config");
 //підключення роутінгу
-const { posts, userRegister } = require("./routes/index");
+const {
+  posts,
+  userRegister,
+  userAuth,
+  userPost,
+  comment,
+} = require("./routes/index");
 
 const app = express();
 
@@ -15,7 +21,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Routes
 app.use("/", posts);
-app.use("/user", userRegister);
+app.use("/register", userRegister);
+app.use("/auth", userAuth);
+app.use("/user-post", userPost);
+app.use("/comment", comment);
 
 app.use(function (req, res) {
   res.status(404).send("404 - Not Found!");
@@ -39,9 +48,6 @@ connect(mongoDB, {
 
     // require("./mocks")();
     //Listen Server express
-    app.listen(config.PORT, () => {
-      console.log(`Server on http://localhost:${config.PORT}/`);
-    });
   })
   .catch((e) => console.error(e));
 //Bind connection to error event (to get notification of connection errors)
@@ -49,3 +55,7 @@ connection.on(
   "error",
   console.error.bind("MongoDB connection error:", console)
 );
+
+app.listen(config.PORT, () => {
+  console.log(`Server on http://localhost:${config.PORT}/`);
+});

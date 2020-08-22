@@ -2,6 +2,8 @@ const faker = require("faker");
 
 const { modelsPost } = require("./models/index");
 
+const authorID = "5f3fe3dcfc67d033a2f1e61f";
+
 module.exports = () => {
   modelsPost
     .remove()
@@ -11,7 +13,7 @@ module.exports = () => {
           .create({
             title: faker.lorem.words(20),
             body: faker.lorem.words(100),
-            author: faker.lorem.words(10),
+            user: authorID,
           })
           .then(console.log)
           .catch(console.error);

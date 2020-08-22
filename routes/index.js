@@ -1,3 +1,6 @@
 const posts = require("./posts");
 const userRegister = require("./userRegister");
-module.exports = { posts, userRegister };
+const userAuth = require("./userAuth");
+const userPost = require("./userPost");
+const comment = require("./comments");
+module.exports = { posts, userRegister, userAuth, userPost, comment };

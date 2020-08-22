@@ -10,7 +10,7 @@ const schema = new Schema(
       type: String,
       required: true,
     },
-    owner: {
+    user: {
       type: Schema.Types.ObjectId,
       ref: "User",
     },

@@ -1,9 +1,0 @@
-post http://localhost:3000/user
-Content-Type: application/json
-
-{
-    "loginUser": "ipsum",
-    "emailUser": "Loasdfg@as.",
-    "passwordUser": "zLorem",
-    "repeatPasswordUser": "zLorem"
-}
