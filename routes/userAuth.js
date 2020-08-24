@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const { AuthUsers } = require("../controllers/index");
+const { authUserValidate } = require("../validations/user/user.validation");
 const router = Router();
 
 // User Model
@@ -7,6 +8,6 @@ const router = Router();
 // @route   POST /auth-user
 // @desc    POST авторизація каристувачів
 // @access  Public
-router.post("/", AuthUsers);
+router.post("/", authUserValidate, AuthUsers);
 
 module.exports = router;

@@ -6,7 +6,7 @@ const UserRegister = require("./users/RegisterUser");
 const AuthUsers = require("./users/AuthUsers");
 const PostUser = require("./posts/controlerPostUser");
 const AddComments = require("./comments/postComments");
-const AllComments = require("./comments/getComments");
+const OnePost = require("./posts/controlerOnePost");
 
 module.exports = {
   getAllPost,
@@ -17,5 +17,5 @@ module.exports = {
   UserRegister,
   PostUser,
   AddComments,
-  AllComments,
+  OnePost,
 };

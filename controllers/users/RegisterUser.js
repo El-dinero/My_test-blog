@@ -11,13 +11,10 @@ const models = require("../../models/index");
 // @desc    Post реєстрація користувача
 // @access  Public
 router.post("/", (req, res) => {
-  const { loginUser, emailUser, passwordUser, repeatPasswordUser } = req.body;
+  const { loginUser, emailUser, passwordUser } = req.body;
   //Validatioon
-  if (!loginUser || !emailUser || !passwordUser) {
-    return res.status(400).json({ msg: "Всі поля мають бути заповнені" });
-  }
-  if (passwordUser !== repeatPasswordUser)
-    return res.status(400).json({ msg: "Паролі не співпадають" });
+  // if (passwordUser !== repeatPasswordUser)
+  //   return res.status(400).json({ msg: "Паролі не співпадають" });
   //Validatioon
   //Перевірка існуючого адміна
   models.user
