@@ -2,4 +2,8 @@
 поатерн ітератор
 passport-jwt 
 joi
-middleweare
+
+middleweare jin 
+розприділити один файл контролери
+response error secsess helpers
+виправити роутинг спочатку ті що з url paramss
