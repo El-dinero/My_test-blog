@@ -1,5 +1,5 @@
 const joi = require("joi");
-const schema = {
+const UserRegister = {
   registerUser: joi.object({
     loginUser: joi
       .string()
@@ -20,17 +20,6 @@ const schema = {
       .required(),
     repeatPasswordUser: joi.valid(joi.ref("passwordUser")),
   }),
-  authUser: joi.object({
-    emailUser: joi
-      .string()
-      .email({ tlds: { allow: true } })
-      .required(),
-    passwordUser: joi
-      .string()
-      .pattern(new RegExp("^[a-zA-Z0-9]{3,30}$"))
-      .message("Блaа")
-      .required(),
-  }),
 };
 
-module.exports = schema;
+module.exports = UserRegister;

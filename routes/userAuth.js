@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const { AuthUsers } = require("../controllers/index");
-const { authUserValidate } = require("../validations/user/user.validation");
+const { authUserValidate } = require("../validations/index");
+
 const router = Router();
 
 // User Model

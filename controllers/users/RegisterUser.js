@@ -12,9 +12,7 @@ const models = require("../../models/index");
 // @access  Public
 router.post("/", (req, res) => {
   const { loginUser, emailUser, passwordUser } = req.body;
-  //Validatioon
-  // if (passwordUser !== repeatPasswordUser)
-  //   return res.status(400).json({ msg: "Паролі не співпадають" });
+  //Validatioo
   //Validatioon
   //Перевірка існуючого адміна
   models.user
