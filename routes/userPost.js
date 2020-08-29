@@ -7,5 +7,5 @@ const router = Router();
 // @route   POST /auth-user
 // @desc    POST авторизація каристувачів
 // @access  Public
-router.get("/", PostUser);
+router.get("/:id", PostUser);
 module.exports = router;

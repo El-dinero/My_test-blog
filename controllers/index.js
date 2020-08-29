@@ -1,12 +1,12 @@
-const updatePosts = require("./posts/controlerUpdatePost");
-const getAllPost = require("./posts/controlerAllPosts");
-const addPost = require("./posts/controlersAddPost");
-const deletePost = require("./posts/controlersRemovePost");
+const updatePosts = require("./posts/UpdatePost");
+const getAllPost = require("./posts/AllPosts");
+const addPost = require("./posts/AddPost");
+const deletePost = require("./posts/RemovePost");
 const UserRegister = require("./users/RegisterUser");
 const AuthUsers = require("./users/AuthUsers");
-const PostUser = require("./posts/controlerPostUser");
+const PostUser = require("./posts/PostUser");
 const AddComments = require("./comments/postComments");
-const OnePost = require("./posts/controlerOnePost");
+const OnePost = require("./posts/OnePost");
 
 module.exports = {
   getAllPost,

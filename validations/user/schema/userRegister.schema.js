@@ -9,16 +9,16 @@ const UserRegister = {
       .required(),
     emailUser: joi
       .string()
-      .email({ tlds: { allow: true } })
+      .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
       .required(),
     passwordUser: joi
       .string()
       .min(6)
       .max(40)
       .pattern(new RegExp("^[a-zA-Z0-9]{3,30}$"))
-      .message("Блaа")
+      .message("Видіть паролі правильно")
       .required(),
-    repeatPasswordUser: joi.valid(joi.ref("passwordUser")),
+    repeatPasswordUser: joi.ref("passwordUser"),
   }),
 };
 

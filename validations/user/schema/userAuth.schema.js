@@ -3,7 +3,7 @@ const UserAuth = {
   authUser: joi.object({
     emailUser: joi
       .string()
-      .email({ tlds: { allow: true } })
+      .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
       .required(),
     passwordUser: joi
       .string()

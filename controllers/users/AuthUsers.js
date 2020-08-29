@@ -4,8 +4,6 @@ const bcrypt = require("bcryptjs");
 const config = require("../../config");
 const jwt = require("jsonwebtoken");
 
-const authUser = require("../../middleware/authUser");
-
 // User Model
 const models = require("../../models/index");
 
@@ -49,21 +47,6 @@ router.post("/", (req, res) => {
             console.error(err);
         });
     })
-    .catch((err) => {
-      res.status(500).json({ msg: "Щось пішло не так спробуйте пізніше!" }),
-        console.error(err);
-    });
-});
-
-// @route   GET /auth-user/user
-// @desc    Get user data
-// @access  Private
-router.get("/user", authUser, (req, res) => {
-  models.user
-    .findById(req.user.id)
-    .select("-passwordUser")
-    .select("-Block")
-    .then((user) => res.json(user))
     .catch((err) => {
       res.status(500).json({ msg: "Щось пішло не так спробуйте пізніше!" }),
         console.error(err);

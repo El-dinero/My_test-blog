@@ -1,9 +1,8 @@
-const { registerUser } = require("../schema/userRegister.schema");
+const { postComment } = require("../schema/comentPost.schema");
 module.exports = {
-  registerUserValidate: async (req, res, next) => {
+  Comment: async (req, res, next) => {
     try {
-      const value = await registerUser.validate(req.body);
-      console.log(value.error.details);
+      const value = await postComment.validate(req.body);
       if (value.error) {
         res.json({ success: 0, message: value.error.details[0].message });
       } else {

@@ -8,14 +8,18 @@ const {
   OnePost,
 } = require("../controllers/index");
 
+const authUser = require("../middleware/authUser");
+const { createPost } = require("../validations/index");
+
+router
+  .route("/:id")
+  .all(authUser)
+  .get(OnePost)
+  .put(updatePosts)
+  .delete(deletePost);
+
 router.get("/", getAllPost);
 
-router.get("/:id", OnePost);
-
-router.post("/", addPost);
-
-router.delete("/:id", deletePost);
-
-router.put("/:id", updatePosts);
+router.post("/", createPost, addPost);
 
 module.exports = router;
