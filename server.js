@@ -1,7 +1,6 @@
 const express = require("express");
-const { connect, connection } = require("mongoose");
 const bodyParser = require("body-parser");
-
+require("./database/mongodb");
 //підключення конфіг залежностей
 const config = require("./config");
 //підключення роутінгу
@@ -35,26 +34,6 @@ app.use(function (req, res) {
 app.use((error, req, res, next) => {
   res.status(error.status || 500);
 });
-
-// Set up default mongoose connection
-const mongoDB = config.MONGO_URL;
-connect(mongoDB, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-})
-  .then(() => {
-    console.log("Mongo conected...");
-
-    // require("./mocks")();
-    //Listen Server express
-  })
-  .catch((e) => console.error(e));
-//Bind connection to error event (to get notification of connection errors)
-connection.on(
-  "error",
-  console.error.bind("MongoDB connection error:", console)
-);
 
 app.listen(config.PORT, () => {
   console.log(`Server on http://localhost:${config.PORT}/`);

@@ -1,21 +1,9 @@
-const updatePosts = require("./posts/UpdatePost");
-const getAllPost = require("./posts/AllPosts");
-const addPost = require("./posts/AddPost");
-const deletePost = require("./posts/RemovePost");
-const UserRegister = require("./users/RegisterUser");
-const AuthUsers = require("./users/AuthUsers");
-const PostUser = require("./posts/PostUser");
-const AddComments = require("./comments/postComments");
-const OnePost = require("./posts/OnePost");
+const Post = require("./posts/Post.Controller");
+const Comments = require("./comments/Comments.Controller");
+const Auth = require("./users/Auth.Controller");
 
 module.exports = {
-  getAllPost,
-  addPost,
-  deletePost,
-  updatePosts,
-  AuthUsers,
-  UserRegister,
-  PostUser,
-  AddComments,
-  OnePost,
+  Post,
+  Comments,
+  Auth,
 };

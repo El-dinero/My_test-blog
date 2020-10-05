@@ -1,8 +1,8 @@
 const { Router } = require("express");
-const { AddComments } = require("../controllers");
+const { Comments } = require("../controllers");
 const router = Router();
-const { Comment } = require("../validations/index");
+const { ValidationComment } = require("../validations/index");
 
-router.post("/", Comment, AddComments);
+router.post("/", ValidationComment, Comments.AddComments);
 
 module.exports = router;

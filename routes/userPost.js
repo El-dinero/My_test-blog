@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { PostUser } = require("../controllers/index");
+const { Post } = require("../controllers/index");
 const router = Router();
 
 // User Model
@@ -7,5 +7,5 @@ const router = Router();
 // @route   POST /auth-user
 // @desc    POST авторизація каристувачів
 // @access  Public
-router.get("/:id", PostUser);
+router.get("/:id", Post.PostUser);
 module.exports = router;

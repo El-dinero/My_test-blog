@@ -1,7 +1,7 @@
 const { addPost } = require("../schema/addPost.schema");
 
 module.exports = {
-  createPost: async (req, res, next) => {
+  ValidPost: async (req, res, next) => {
     try {
       const value = await addPost.validate(req.body);
       if (value.error) {

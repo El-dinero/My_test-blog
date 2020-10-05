@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const schema = new Schema(
+const Comment = new Schema(
   {
     body: {
       type: String,
@@ -25,8 +25,8 @@ const schema = new Schema(
   }
 );
 
-schema.set("toJSON", {
+Comment.set("toJSON", {
   virtuals: true,
 });
 
-module.exports = model("Comment", schema);
+module.exports = model("Comment", Comment);

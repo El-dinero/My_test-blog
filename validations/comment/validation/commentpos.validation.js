@@ -1,6 +1,6 @@
 const { postComment } = require("../schema/comentPost.schema");
 module.exports = {
-  Comment: async (req, res, next) => {
+  ValidationComment: async (req, res, next) => {
     try {
       const value = await postComment.validate(req.body);
       if (value.error) {

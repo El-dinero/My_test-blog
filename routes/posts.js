@@ -1,25 +1,19 @@
 const { Router } = require("express");
 const router = Router();
-const {
-  getAllPost,
-  addPost,
-  deletePost,
-  updatePosts,
-  OnePost,
-} = require("../controllers/index");
+const { Post } = require("../controllers/index");
 
 const authUser = require("../middleware/authUser");
-const { createPost } = require("../validations/index");
+const { ValidPost } = require("../validations/index");
 
 router
   .route("/:id")
-  .all(authUser)
-  .get(OnePost)
-  .put(updatePosts)
-  .delete(deletePost);
+  // .all(authUser)
+  .get(authUser, Post.OnePost)
+  .put(authUser, Post.UpdatePost)
+  .delete(authUser, Post.RemovePost);
 
-router.get("/", getAllPost);
+router.get("/", Post.AllPost);
 
-router.post("/", createPost, addPost);
+router.post("/", authUser, ValidPost, Post.AddPost);
 
 module.exports = router;
